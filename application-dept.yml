@@ -4,11 +4,7 @@ spring:
     - dev
 
 ---
-spring:
-  profiles: dev
-  application:
-    name: microservicecloud-config-dept-dev
-    
+ 
 server:
   port: 8001
  
@@ -19,8 +15,9 @@ mybatis:
     - classpath:mybatis/mapper/*.xml                       # mapper映射文件
     
 spring:
+   profiles: dev
    application:
-    name: microservicecloud-dept 
+    name: microservicecloud-config-dept-dev 
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
@@ -47,11 +44,7 @@ info:
   build.version: $project.version$
   
 ---
-spring:
-  profiles: test
-  application:
-    name: microservicecloud-config-eureka-dev
-    
+
 server:
   port: 8001
  
@@ -62,8 +55,9 @@ mybatis:
     - classpath:mybatis/mapper/*.xml                       # mapper映射文件
     
 spring:
+   profiles: test
    application:
-    name: microservicecloud-dept 
+    name: microservicecloud-config-eureka-dev
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
